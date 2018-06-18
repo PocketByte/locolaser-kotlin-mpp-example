@@ -1,0 +1,10 @@
+apply plugin: 'kotlin-platform-jvm'
+
+group = 'ru.pocketbyte.locolaser.kotlin_multiplatform_example'
+version = 1.0
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    expectedBy project(':common')
+}

@@ -1,0 +1,39 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    // Specify a Kotlin version you need.
+    ext.kotlin_version = '1.2.41'
+    
+    repositories {
+        maven { url "https://maven.google.com" }
+        google()
+        jcenter()
+        maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:0.7"
+        classpath "gradle.plugin.ru.pocketbyte.locolaser:plugin:1.0.1"
+    }
+}
+
+apply plugin: "ru.pocketbyte.locolaser"
+
+dependencies {
+    localize "ru.pocketbyte.locolaser:core:1.2.1"
+    localize "ru.pocketbyte.locolaser:platform-mobile:1.2.1"
+    localize "ru.pocketbyte.locolaser:platform-kotlin-mobile:1.2.1"
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
