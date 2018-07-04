@@ -1,0 +1,16 @@
+apply plugin: 'konan'
+
+// Specify targets to build the framework: iOS and iOS simulator
+konan.targets = ['ios_arm64', 'ios_x64']
+
+konanArtifacts {
+    // Declare building into a framework.
+    program('App') {
+        // The multiplatform support is disabled by default.
+        enableMultiplatform true
+    }
+}
+
+dependencies {
+    expectedBy project(':common')
+}
