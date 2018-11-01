@@ -1,4 +1,4 @@
-apply plugin: 'konan'
+apply plugin: "org.jetbrains.kotlin.konan"
 
 // Specify targets to build the framework: iOS and iOS simulator
 konan.targets = ['ios_arm64', 'ios_x64']
@@ -8,9 +8,18 @@ konanArtifacts {
     program('App') {
         // The multiplatform support is disabled by default.
         enableMultiplatform true
+
+        srcFiles({
+            fileTree('./src/main/kotlin') +
+            fileTree('./build/generated/source/kaptKotlin/main/')
+        })
     }
 }
 
 dependencies {
     expectedBy project(':common')
+}
+
+checkKonanCompiler.dependsOn {
+    project.tasks.getByPath(':localize')
 }

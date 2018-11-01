@@ -15,14 +15,14 @@
         },
         {
             "type": "kotlin-android",
-            "res_dir": "./app_android/src/main/kotlin/",
+            "res_dir": "./app_android/build/generated/source/kaptKotlin/main/",
             "res_name": "ru.pocketbyte.locolaser.example.repository.AndroidStringRepository",
             "implements": "ru.pocketbyte.locolaser.example.repository.StringRepository",
             "app_id": "ru.pocketbyte.locolaser.example"
         },
         {
             "type": "kotlin-ios",
-            "res_dir": "./app_ios/src/main/kotlin/",
+            "res_dir": "./app_ios/build/generated/source/kaptKotlin/main/",
             "res_name": "ru.pocketbyte.locolaser.example.repository.IosStringRepository",
             "implements": "ru.pocketbyte.locolaser.example.repository.StringRepository"
         }

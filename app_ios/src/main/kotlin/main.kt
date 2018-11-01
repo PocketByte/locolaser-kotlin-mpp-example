@@ -3,7 +3,6 @@ import kotlinx.cinterop.*
 import platform.Foundation.*
 import platform.UIKit.*
 
-import ru.pocketbyte.locolaser.example.repository.IosStringRepository
 import ru.pocketbyte.locolaser.example.repository.Repository
 
 fun main(args: Array<String>) {
@@ -39,8 +38,6 @@ class ViewController : UIViewController {
 
     override fun viewDidLoad() {
         super.viewDidLoad()
-
-        Repository.initInstance(IosStringRepository())
 
         this.labelMessage.text = Repository.str.screen_main_hello_text
     }

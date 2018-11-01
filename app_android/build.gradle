@@ -3,17 +3,27 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion project.android_sdk_compile
+    buildToolsVersion project.android_build_tool_version
+
     defaultConfig {
         applicationId "ru.pocketbyte.locolaser.example"
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdkVersion project.android_sdk_min
+        targetSdkVersion project.android_sdk_target
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
         release {
 
+        }
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir "${buildDir.absolutePath}/generated/source/"
+            }
         }
     }
 
@@ -24,10 +34,11 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation "com.android.support:appcompat-v7:$android_support_version"
 
     implementation project(':impl_jvm')
 }
-repositories {
-    mavenCentral()
+
+preBuild.dependsOn {
+    project.tasks.getByPath(':localize')
 }

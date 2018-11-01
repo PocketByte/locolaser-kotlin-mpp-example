@@ -6,3 +6,7 @@ version = 1.0
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlin_version"
 }
+
+compileKotlinCommon.dependsOn {
+    project.tasks.getByPath(':localize')
+}

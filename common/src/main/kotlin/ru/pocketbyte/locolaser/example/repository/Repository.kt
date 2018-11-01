@@ -1,16 +1,7 @@
 package ru.pocketbyte.locolaser.example.repository
 
-public class Repository {
+expect object Repository {
 
-    companion object {
+    val str: StringRepository
 
-        private var stringRepository: StringRepository? = null
-
-        public fun initInstance(stringRepository: StringRepository) {
-            Companion.stringRepository = stringRepository
-        }
-
-        val str: StringRepository
-            get() = stringRepository!!
-    }
 }
