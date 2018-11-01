@@ -20,6 +20,7 @@ dependencies {
     expectedBy project(':common')
 }
 
+// 4.3 Run task ‘localize’ before each build
 checkKonanCompiler.dependsOn {
     project.tasks.getByPath(':localize')
 }

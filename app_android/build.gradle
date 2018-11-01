@@ -39,6 +39,7 @@ dependencies {
     implementation project(':impl_jvm')
 }
 
+// 4.2 Run task ‘localize’ before each build
 preBuild.dependsOn {
     project.tasks.getByPath(':localize')
 }

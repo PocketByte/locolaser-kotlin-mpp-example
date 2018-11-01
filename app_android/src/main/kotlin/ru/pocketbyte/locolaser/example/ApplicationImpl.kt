@@ -9,7 +9,7 @@ public class ApplicationImpl : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // Init Repository
+        // 5.1 Init Android Repository
         Repository.initInstance(AndroidStringRepository(this))
     }
 }

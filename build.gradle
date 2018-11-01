@@ -14,20 +14,28 @@ buildscript {
         maven { url "https://maven.google.com" }
         google()
         jcenter()
-        maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
+
+        // 1.1: Add maven repository
         maven { url "https://plugins.gradle.org/m2/" }
+
+        // Kotlin Native repo
+        maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:$kotlin_native_version"
+
+        // 1.2: Add classpath dependency
         classpath "gradle.plugin.ru.pocketbyte.locolaser:plugin:1.0.2"
     }
 }
 
+// 1.3: Apply LocoLaser plugin
 apply plugin: "ru.pocketbyte.locolaser"
 
 dependencies {
+    // 2: Add dependency for Kotlin mobile platforms
     localize "ru.pocketbyte.locolaser:platform-kotlin-mobile:1.2.4"
 }
 
