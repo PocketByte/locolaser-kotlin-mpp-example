@@ -1,5 +1,5 @@
 # LocoLaser Kotlin Multiplatform Example
-[LocoLaser](https://github.com/PocketByte/LocoLaser/) - Localozation tool that generate localization files for various platforms depends on common source.
+[LocoLaser](https://github.com/PocketByte/LocoLaser/) - Localization tool that generate localization files for various platforms depends on common source.
 <br>This example shows how to use LocoLaser in Kotlin Mobile Multiplatform projects to generate localized strings repository class with common interface for both mobile platforms: Android and iOS.
 
 ##### 1 Step: Apply gradle plugin
@@ -25,7 +25,7 @@ Apply plugin in the same **`build.gradle`**:
 apply plugin: "ru.pocketbyte.locolaser"
 ```
 
-##### 2 Step: Add 'localize' dependensy
+##### 2 Step: Add 'localize' dependency
 Choose which type of artifact you will use and add them as **`localize`** dependency. This example uses artifact to work with Kotlin Mobile Multiplatform projects:
 ```gradle
 dependencies {
