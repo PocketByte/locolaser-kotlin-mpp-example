@@ -18,7 +18,11 @@ public class MainActivity : AppCompatActivity(), MainScreenContract.View {
         this.presenter.start()
     }
 
-    override fun showMessage(message: String) {
-        txtHello.text = message
+    override fun showMessage1(message: String) {
+        text1.text = message
+    }
+
+    override fun showMessage2(message: String) {
+        text2.text = message
     }
 }

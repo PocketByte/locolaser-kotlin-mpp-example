@@ -30,7 +30,7 @@ Choose which type of artifact you will use and add them as **`localize`** depend
 ```gradle
 dependencies {
     // 2: Add dependency for Kotlin mobile platforms
-    localize "ru.pocketbyte.locolaser:platform-kotlin-mobile:1.2.4"
+    localize "ru.pocketbyte.locolaser:platform-kotlin-mobile:1.2.5"
 }
 ```
 

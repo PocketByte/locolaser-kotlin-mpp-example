@@ -3,7 +3,8 @@ package ru.pocketbyte.locolaser.example.presentation
 interface MainScreenContract {
 
     interface View {
-        fun showMessage(message: String)
+        fun showMessage1(message: String)
+        fun showMessage2(message: String)
     }
 
     interface Presenter {

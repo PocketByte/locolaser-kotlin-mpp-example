@@ -18,4 +18,9 @@ interface StringRepository {
     */
     val screen_main_hello_text: String
 
+    /**
+    * Plural: %d apples
+    */
+    fun screen_main_plural_string(count: Int): String
+
 }

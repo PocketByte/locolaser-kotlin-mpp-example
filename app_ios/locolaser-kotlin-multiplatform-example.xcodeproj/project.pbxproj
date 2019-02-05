@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80A5FD72209D732007710B2 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = C80A5FD52209D732007710B2 /* Localizable.stringsdict */; };
 		C89A9D0520BDF9F500A19C77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C89A9D0320BDF9F500A19C77 /* Localizable.strings */; };
 		C8A822BE20BAF801004C070F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A822BC20BAF801004C070F /* Main.storyboard */; };
 		C8A822C020BAF802004C070F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A822BF20BAF802004C070F /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C80A5FD62209D732007710B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = Base; path = Base.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		C89A9D0420BDF9F500A19C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C8A822B520BAF801004C070F /* locolaser-kotlin-multiplatform-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "locolaser-kotlin-multiplatform-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A822BD20BAF801004C070F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				C8A822BC20BAF801004C070F /* Main.storyboard */,
 				C8A822BF20BAF802004C070F /* Assets.xcassets */,
 				C89A9D0320BDF9F500A19C77 /* Localizable.strings */,
+				C80A5FD52209D732007710B2 /* Localizable.stringsdict */,
 				C8A822C120BAF802004C070F /* LaunchScreen.storyboard */,
 				C8A822C420BAF802004C070F /* Info.plist */,
 				C8A822CD20BC9AC1004C070F /* src */,
@@ -133,6 +136,7 @@
 				C89A9D0520BDF9F500A19C77 /* Localizable.strings in Resources */,
 				C8A822C320BAF802004C070F /* LaunchScreen.storyboard in Resources */,
 				C8A822C020BAF802004C070F /* Assets.xcassets in Resources */,
+				C80A5FD72209D732007710B2 /* Localizable.stringsdict in Resources */,
 				C8A822BE20BAF801004C070F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +201,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C80A5FD52209D732007710B2 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C80A5FD62209D732007710B2 /* Base */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
 		C89A9D0320BDF9F500A19C77 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

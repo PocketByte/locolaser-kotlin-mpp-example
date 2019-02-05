@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var labelMessage: UILabel?
+    @IBOutlet weak var labelMessage1: UILabel?
+    @IBOutlet weak var labelMessage2: UILabel?
 
 }

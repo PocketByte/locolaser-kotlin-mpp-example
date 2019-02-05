@@ -1,13 +1,21 @@
 apply plugin: "org.jetbrains.kotlin.konan"
 
-// Specify targets to build the framework: iOS and iOS simulator
-konan.targets = ['ios_arm64', 'ios_x64']
+konan.targets = ['macos_x64', 'ios_arm32', 'ios_arm64', 'ios_x64']
 
 konanArtifacts {
-    // Declare building into a framework.
+
+    // 6.2 Add interop to Objective-C code that implements work work with plurals
+    // Workaround for https://github.com/JetBrains/kotlin-native/issues/1834
+    interop('LocalizedPlural')
+
     program('App') {
         // The multiplatform support is disabled by default.
         enableMultiplatform true
+
+        // 6.3 Use interop artifact
+        libraries {
+            artifact 'LocalizedPlural'
+        }
 
         srcFiles({
             fileTree('./src/main/kotlin') +

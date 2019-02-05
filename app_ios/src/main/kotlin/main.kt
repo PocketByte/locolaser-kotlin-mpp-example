@@ -3,7 +3,8 @@ import kotlinx.cinterop.*
 import platform.Foundation.*
 import platform.UIKit.*
 
-import ru.pocketbyte.locolaser.example.repository.Repository
+import ru.pocketbyte.locolaser.example.presentation.MainScreenContract
+import ru.pocketbyte.locolaser.example.presentation.MainScreenPresenter
 
 fun main(args: Array<String>) {
     memScoped {
@@ -34,11 +35,27 @@ class ViewController : UIViewController {
     @OverrideInit constructor(coder: NSCoder) : super(coder)
 
     @ObjCOutlet
-    lateinit var labelMessage: UILabel
+    lateinit var labelMessage1: UILabel
+
+    @ObjCOutlet
+    lateinit var labelMessage2: UILabel
 
     override fun viewDidLoad() {
         super.viewDidLoad()
 
-        this.labelMessage.text = Repository.str.screen_main_hello_text
+        val presenter: MainScreenContract.Presenter = MainScreenPresenter(ViewImpl(this))
+
+        presenter.start()
+    }
+}
+
+class ViewImpl(private val controller: ViewController): MainScreenContract.View {
+
+    override fun showMessage1(message: String) {
+        this.controller.labelMessage1.text = message
+    }
+
+    override fun showMessage2(message: String) {
+        this.controller.labelMessage2.text = message
     }
 }
