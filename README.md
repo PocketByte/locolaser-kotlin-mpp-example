@@ -76,6 +76,34 @@ Now any string can be received using code as following:
 ```kotlin
 Repository.str.screen_main_hello_text
 ```
+
+##### 6 Step: Plurals
+Current version of Kotlin/Native doesn't support variadic Objective-C methods (see issue https://github.com/JetBrains/kotlin-native/issues/1834). But this feature needs to implement plurals in iOS and macOS. If you want to use plurals, you should implement some workaround to make it work on iOS and macOS.
+
+At first add [LocalizedPlural.def](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/app_ios/src/main/c_interop/LocalizedPlural.def) into `[iOS/macOS module]/src/[iOS/macOS main]/c_interop/`.
+
+Then add `interop` into **`app_ios/build.gradle`**:
+```gradle
+konanArtifacts {
+    // 6.2 Add interop to Objective-C code that implements work work with plurals
+    interop('LocalizedPlural')
+
+    program('App') {
+        ...
+        // 6.3 Use interop artifact
+        libraries {
+            artifact 'LocalizedPlural'
+        }
+    }
+}
+```
+Thats all. Now you able to use plurals on iOS/macOS.
+Any plural string can be received using code as following:
+```kotlin
+val count = 10
+Repository.str.screen_main_plural_string(count)
+```
+
 ## License
 ```
 Copyright © 2017 Denis Shurygin. All rights reserved.
