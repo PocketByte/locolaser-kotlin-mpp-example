@@ -19,14 +19,6 @@ android {
         }
     }
 
-    sourceSets {
-        main {
-            java {
-                srcDir "${buildDir.absolutePath}/generated/source/"
-            }
-        }
-    }
-
     packagingOptions {
         exclude 'META-INF/main.kotlin_module'
     }
@@ -36,10 +28,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.android.support:appcompat-v7:$android_support_version"
 
-    implementation project(':impl_jvm')
-}
-
-// 4.2 Run task ‘localize’ before each build
-preBuild.dependsOn {
-    project.tasks.getByPath(':localize')
+    implementation project(':common')
 }

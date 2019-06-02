@@ -1,0 +1,27 @@
+{
+    "platform": [
+        {
+            "type": "android",
+            "res_dir": "../app_android/src/main/res/"
+        },
+        {
+            "type": "ios",
+            "res_dir": "../app_ios/locolaser-kotlin-multiplatform-example/"
+        },
+        {
+            "type": "kotlin-common",
+            "res_dir": "./build/generated/locolaser/common/"
+        },
+        {
+            "type": "kotlin-android",
+            "res_dir": "./build/generated/locolaser/android/"
+        },
+        {
+            "type": "kotlin-ios",
+            "res_dir": "./build/generated/locolaser/ios/"
+        }
+    ],
+    "source": "null",
+    "temp_dir": "./build/temp/",
+    "duplicate_comment":false
+}

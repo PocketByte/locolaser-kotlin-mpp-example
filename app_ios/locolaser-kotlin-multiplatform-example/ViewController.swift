@@ -7,10 +7,24 @@
 //
 
 import UIKit
+import Common
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MainScreenContractView {
     
-    @IBOutlet weak var labelMessage1: UILabel?
-    @IBOutlet weak var labelMessage2: UILabel?
+    @IBOutlet weak var labelMessage1: UILabel!
+    @IBOutlet weak var labelMessage2: UILabel!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        MainScreenPresenter(view: self).start()
+    }
+    
+    func showMessage1(message: String) {
+        labelMessage1.text = message
+    }
+    
+    func showMessage2(message: String) {
+        labelMessage2.text = message
+    }
 }

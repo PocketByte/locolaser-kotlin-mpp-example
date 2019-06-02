@@ -5,32 +5,38 @@
 ##### 1 Step: Apply gradle plugin
 Example uses standard way to apply custom gradle plugin.<br>
 In **`build.gradle`** of the project was added maven repository and classpath:
-```gradle
+```groovy
 buildscript {
   repositories {
     maven {
       // 1.1: Add maven repository
       url "https://plugins.gradle.org/m2/"
     }
+    
+    ...
   }
   dependencies {
     // 1.2: Add classpath dependency
-    classpath "gradle.plugin.ru.pocketbyte.locolaser:plugin:1.0.2"
+    classpath "gradle.plugin.ru.pocketbyte.locolaser:plugin:1.0.3"
+    
+    ...
   }
 }
 ```
-Apply plugin in the same **`build.gradle`**:
-```
+Apply plugin in **`build.gradle`** of common module:
+```groovy
 // 1.3: Apply LocoLaser plugin
 apply plugin: "ru.pocketbyte.locolaser"
 ```
 
 ##### 2 Step: Add 'localize' dependency
 Choose which type of artifact you will use and add them as **`localize`** dependency. This example uses artifact to work with Kotlin Mobile Multiplatform projects:
-```gradle
+```groovy
 dependencies {
     // 2: Add dependency for Kotlin mobile platforms
-    localize "ru.pocketbyte.locolaser:platform-kotlin-mobile:1.2.5"
+    localize "ru.pocketbyte.locolaser:platform-kotlin-mobile:1.2.8"
+    
+    ...
 }
 ```
 
@@ -38,38 +44,23 @@ dependencies {
 How to build config file you can find in Wiki: [Platform: Kotlin Mobile Multiplatform](https://github.com/PocketByte/LocoLaser/wiki/Platform:-Kotlin-Mobile-Multiplatform) By default this config file should have name`"localize_config.json"` and be placed in the root folder of the project.
 
 ##### 4 Step: Run task 'localize' before build
-This example run **`:localize`** task before each build. To do it the following modules has following task dependencies in **`build.gradle`**:<br>
-**`common/build.gradle`**:
-```gradle
-// 4.1 Run task ‘localize’ before each build
-compileKotlinCommon.dependsOn {
-   project.tasks.getByPath(':localize')
-}
-```
-**`app_android/build.gradle`**:
-```gradle
-// 4.2 Run task ‘localize’ before each build
+This example run **`:localize`** task before each build. To do it add task dependencies in **`build.gradle`** of common module:
+```groovy
+// 4 Run task ‘localize’ before each build
 preBuild.dependsOn {
-   project.tasks.getByPath(':localize')
-}
-```
-**`app_ios/build.gradle`**:
-```gradle
-// 4.3 Run task ‘localize’ before each build
-checkKonanCompiler.dependsOn {
-   project.tasks.getByPath(':localize')
+    project.tasks.getByPath(':common:localize')
 }
 ```
 
 
 ##### 5 Step: Init repository
-As a final step instance of Strings repository should be created. This example use common object [Repository](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/common/src/main/kotlin/ru/pocketbyte/locolaser/example/repository/Repository.kt) with ‘expect’ modifier. This object should be implemented for each platform independently.
-In Android application it's better to implement [standard singleton](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/impl_jvm/src/main/kotlin/ru/pocketbyte/locolaser/example/repository/Repository.kt) and initialize it in `Application` class in method `onCreate`:
+As a final step instance of Strings repository should be created. This example use common object [Repository](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/common/src/commonMain/kotlin/ru/pocketbyte/locolaser/example/repository/Repository.kt) with ‘expect’ modifier. This object should be implemented for each platform independently.
+In Android application it's better to implement [standard singleton](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/common/src/androidMain/kotlin/ru/pocketbyte/locolaser/example/repository/Repository.kt) and initialize it in `Application` class in method `onCreate`:
 ```kotlin
 // 5.1 Init Android Repository
 Repository.initInstance(AndroidStringRepository(this))
 ```
-In iOS application it's better to initialize property right in [property declaration](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/app_ios/src/main/kotlin/ru/pocketbyte/locolaser/example/repository/Repository.kt)
+In iOS application it's better to initialize property right in [property declaration](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/common/src/iosMain/kotlin/ru/pocketbyte/locolaser/example/repository/Repository.kt)
 
 ##### Usage in code
 Now any string can be received using code as following:
@@ -80,20 +71,25 @@ Repository.str.screen_main_hello_text
 ##### 6 Step: Plurals
 Current version of Kotlin/Native doesn't support variadic Objective-C methods (see issue https://github.com/JetBrains/kotlin-native/issues/1834). But this feature needs to implement plurals in iOS and macOS. If you want to use plurals, you should implement some workaround to make it work on iOS and macOS.
 
-At first add [LocalizedPlural.def](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/app_ios/src/main/c_interop/LocalizedPlural.def) into `[iOS/macOS module]/src/[iOS/macOS main]/c_interop/`.
+At first add [LocalizedPlural.def](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/common/src/iosMain/c_interop/LocalizedPlural.def) into `[common module]/src/iosMain/c_interop/`.
 
-Then add `interop` into **`app_ios/build.gradle`**:
-```gradle
-konanArtifacts {
-    // 6.2 Add interop to Objective-C code that implements work work with plurals
-    interop('LocalizedPlural')
-
-    program('App') {
+Then add `interop` into **`build.gradle`**:
+```groovy
+kotlin {
+    targets {
         ...
-        // 6.3 Use interop artifact
-        libraries {
-            artifact 'LocalizedPlural'
+    
+        fromPreset(iOSTarget, 'ios') {
+            // 6.2 Add interop to Objective-C code that implements work work with plurals
+            compilations.main.cinterops{
+                LocalizedPlural {
+                    defFile project.file("src/iosMain/c_interop/LocalizedPlural.def")
+                }
+            }
+            
+            ...
         }
+        ...
     }
 }
 ```
@@ -102,6 +98,38 @@ Any plural string can be received using code as following:
 ```kotlin
 val count = 10
 Repository.str.screen_main_plural_string(count)
+```
+
+
+##### 7 Step: Move generated files into build folder
+Because String Repository classes generated depends on string resources, no need to hold them together with other source classes and commit into git. This example overrides `res_dir` of kotlin classes and put them into folders `./build/generated/locolaser/[platform]`. To tell gradle plugin about this files, add source dirs into **`gradle.build`** of common module:
+```groovy
+
+kotlin {
+    sourceSets {
+        commonMain {
+            // 7.1 Add source dir for generated common classes
+            kotlin.srcDir('./build/generated/locolaser/common/')
+            
+            ...
+        }
+
+        androidMain {
+            // 7.2 Add source dir for generated android classes
+            kotlin.srcDir('./build/generated/locolaser/android/')
+            
+            ...
+        }
+
+        iosMain {
+            // 7.3 Add source dir for generated iOS classes
+            kotlin.srcDir('./build/generated/locolaser/ios/')
+            
+            ...
+        }
+    }
+    ...
+}
 ```
 
 ## License

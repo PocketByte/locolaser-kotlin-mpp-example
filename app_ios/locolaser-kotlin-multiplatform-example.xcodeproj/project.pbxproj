@@ -14,7 +14,23 @@
 		C8A822C320BAF802004C070F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A822C120BAF802004C070F /* LaunchScreen.storyboard */; };
 		C8A822D020BC9B76004C070F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A822CF20BC9B76004C070F /* ViewController.swift */; };
 		C8A822D220BCA023004C070F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A822D120BCA023004C070F /* AppDelegate.swift */; };
+		C8D7BF8022A43150008028FE /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D7BF7F22A43150008028FE /* Common.framework */; };
+		C8D7BF8222A4317C008028FE /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8D7BF7F22A43150008028FE /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C840A50822A4227A00465BA0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C8D7BF8222A4317C008028FE /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C80A5FD62209D732007710B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = Base; path = Base.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -27,6 +43,7 @@
 		C8A822CD20BC9AC1004C070F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = SOURCE_ROOT; };
 		C8A822CF20BC9B76004C070F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8A822D120BCA023004C070F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8D7BF7F22A43150008028FE /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = "../../common/build/xcode-frameworks/Common.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,15 +51,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8D7BF8022A43150008028FE /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C840A50922A4228600465BA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8D7BF7F22A43150008028FE /* Common.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		C8A822AC20BAF801004C070F = {
 			isa = PBXGroup;
 			children = (
+				C840A50922A4228600465BA0 /* Frameworks */,
 				C8A822B720BAF801004C070F /* locolaser-kotlin-multiplatform-example */,
 				C8A822B620BAF801004C070F /* Products */,
 			);
@@ -79,12 +106,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8A822C720BAF802004C070F /* Build configuration list for PBXNativeTarget "locolaser-kotlin-multiplatform-example" */;
 			buildPhases = (
+				C8A822CB20BC995C004C070F /* Build Common Framework */,
 				C8A822CA20BC9933004C070F /* Remove Original Binary */,
 				C8A822B120BAF801004C070F /* Sources */,
 				C8A822B220BAF801004C070F /* Frameworks */,
-				C8A822CB20BC995C004C070F /* Build Binary From Kotlin Sources */,
-				C8A822CC20BC99C8004C070F /* Replace Binary */,
 				C8A822B320BAF801004C070F /* Resources */,
+				C840A50822A4227A00465BA0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,33 +185,19 @@
 			shellPath = /bin/sh;
 			shellScript = "rm -f \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"";
 		};
-		C8A822CB20BC995C004C070F /* Build Binary From Kotlin Sources */ = {
+		C8A822CB20BC995C004C070F /* Build Common Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Build Binary From Kotlin Sources";
+			name = "Build Common Framework";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT\" \"$KONAN_TASK\"          \\\n-Pkonan.configuration.build.dir=\"$CONFIGURATION_BUILD_DIR\" \\\n-Pkonan.debugging.symbols=\"$DEBUGGING_SYMBOLS\"             \\\n-Pkonan.optimizations.enable=\"$KONAN_ENABLE_OPTIMIZATIONS\"";
-		};
-		C8A822CC20BC99C8004C070F /* Replace Binary */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Replace Binary";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp \"$TARGET_BUILD_DIR/app.kexe\" \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"";
+			shellScript = "cd \"$SRCROOT/../common/build/xcode-frameworks\"\n./gradlew :common:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -356,10 +369,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QYF24V9H2B;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../common/build/xcode-frameworks";
 				INFOPLIST_FILE = "locolaser-kotlin-multiplatform-example/Info.plist";
-				KONAN_ENABLE_OPTIMIZATIONS = NO;
-				KONAN_TASK = "";
-				"KONAN_TASK[sdk=iphonesimulator*]" = compileKonanAppIos_x64;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,9 +388,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QYF24V9H2B;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../common/build/xcode-frameworks";
 				INFOPLIST_FILE = "locolaser-kotlin-multiplatform-example/Info.plist";
-				KONAN_ENABLE_OPTIMIZATIONS = YES;
-				KONAN_TASK = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

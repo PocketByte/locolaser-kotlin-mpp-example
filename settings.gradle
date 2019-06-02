@@ -1,6 +1,2 @@
 include ':app_android'
-include ':impl_jvm'
-
-include ':app_ios'
-
 include ':common'
