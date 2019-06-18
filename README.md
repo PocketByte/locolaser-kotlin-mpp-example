@@ -17,7 +17,7 @@ buildscript {
   }
   dependencies {
     // 1.2: Add classpath dependency
-    classpath "gradle.plugin.ru.pocketbyte.locolaser:plugin:1.0.3"
+    classpath "gradle.plugin.ru.pocketbyte.locolaser:plugin:1.0.4"
     
     ...
   }
