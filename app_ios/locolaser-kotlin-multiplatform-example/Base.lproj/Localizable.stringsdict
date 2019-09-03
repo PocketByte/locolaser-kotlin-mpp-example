@@ -15,12 +15,12 @@
             <string>NSStringPluralRuleType</string>
             <key>NSStringFormatValueTypeKey</key>
             <string>d</string>
-            <key>other</key>
-            <string>Plural: %d apples</string>
-            <key>one</key>
-            <string>Plural: one apple</string>
             <key>zero</key>
             <string>Plural: no apples</string>
+            <key>one</key>
+            <string>Plural: one apple</string>
+            <key>other</key>
+            <string>Plural: %d apples</string>
         </dict>
     </dict>
 </dict>

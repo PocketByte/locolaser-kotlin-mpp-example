@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Common
+import ios_app_framework
 
 class ViewController: UIViewController, MainScreenContractView {
     

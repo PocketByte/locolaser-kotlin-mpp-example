@@ -7,8 +7,8 @@
     <string name="app_name">locolaser-kotlin-multiplatform-example</string>
     <string name="screen_main_hello_text">Hello Kotlin!</string>
     <plurals name="screen_main_plural_string">
-        <item quantity="other">Plural: %d apples</item>
-        <item quantity="one">Plural: one apple</item>
         <item quantity="zero">Plural: no apples</item>
+        <item quantity="one">Plural: one apple</item>
+        <item quantity="other">Plural: %d apples</item>
     </plurals>
 </resources>

@@ -1,0 +1,52 @@
+apply plugin: 'kotlin2js'
+
+group 'ru.pocketbyte.locolaser'
+version '1.0'
+
+ext {
+    outputDir = "./build/out"
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
+    implementation "org.jetbrains.kotlinx:kotlinx-html-js:0.6.12"
+    implementation "ru.pocketbyte.locolaser:i18next-externals:1.0"
+    implementation project.findProject(":common")
+}
+
+task copyAppSources(type: Copy) {
+    from "$buildDir/classes/kotlin/main/${project.name}.js",
+            "$projectDir/src/main/resources/"
+    into file("$outputDir/")
+}
+
+task copyKotlinJs(type: Copy) {
+    from(zipTree(project.configurations.runtimeClasspath.find {
+        it.name.startsWith("kotlin-stdlib-js-")
+    }.canonicalPath)) {
+        include "kotlin.js"
+    }
+    into file("$outputDir/")
+}
+
+task copyCommonJs(type: Copy) {
+    from(zipTree(project.configurations.runtimeClasspath.find {
+        it.name.startsWith("common")
+    }.canonicalPath)) {
+        include "common.js"
+    }
+    into file("$outputDir/")
+}
+
+task copyAllSourcesIntoOutputDir {
+    dependsOn copyAppSources
+    dependsOn copyKotlinJs
+    dependsOn copyCommonJs
+}
+
+project.tasks.build.finalizedBy copyAllSourcesIntoOutputDir

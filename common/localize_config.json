@@ -9,6 +9,10 @@
             "res_dir": "../app_ios/locolaser-kotlin-multiplatform-example/"
         },
         {
+            "type": "json",
+            "res_dir": "../app_js/src/main/resources/locales/"
+        },
+        {
             "type": "kotlin-common",
             "res_dir": "./build/generated/locolaser/common/"
         },
@@ -19,6 +23,10 @@
         {
             "type": "kotlin-ios",
             "res_dir": "./build/generated/locolaser/ios/"
+        },
+        {
+            "type": "kotlin-js",
+            "res_dir": "./build/generated/locolaser/js/"
         }
     ],
     "source": "null",

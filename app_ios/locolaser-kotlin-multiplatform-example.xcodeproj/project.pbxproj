@@ -14,9 +14,19 @@
 		C8A822C320BAF802004C070F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A822C120BAF802004C070F /* LaunchScreen.storyboard */; };
 		C8A822D020BC9B76004C070F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A822CF20BC9B76004C070F /* ViewController.swift */; };
 		C8A822D220BCA023004C070F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A822D120BCA023004C070F /* AppDelegate.swift */; };
-		C8D7BF8022A43150008028FE /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D7BF7F22A43150008028FE /* Common.framework */; };
-		C8D7BF8222A4317C008028FE /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8D7BF7F22A43150008028FE /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C8ABCBE4231E7D2100248112 /* ios_app_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ABCBDD231E7D2100248112 /* ios_app_framework.framework */; };
+		C8ABCBE5231E7D2100248112 /* ios_app_framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8ABCBDD231E7D2100248112 /* ios_app_framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C8ABCBE2231E7D2100248112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8A822AD20BAF801004C070F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8ABCBDC231E7D2100248112;
+			remoteInfo = ios_app_framework;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C840A50822A4227A00465BA0 /* Embed Frameworks */ = {
@@ -25,7 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C8D7BF8222A4317C008028FE /* Common.framework in Embed Frameworks */,
+				C8ABCBE5231E7D2100248112 /* ios_app_framework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,7 +53,9 @@
 		C8A822CD20BC9AC1004C070F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = SOURCE_ROOT; };
 		C8A822CF20BC9B76004C070F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8A822D120BCA023004C070F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8D7BF7F22A43150008028FE /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = "../../common/build/xcode-frameworks/Common.framework"; sourceTree = "<group>"; };
+		C8ABCBDD231E7D2100248112 /* ios_app_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_app_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8ABCBDF231E7D2100248112 /* ios_app_framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_app_framework.h; sourceTree = "<group>"; };
+		C8ABCBE0231E7D2100248112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,25 +63,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8D7BF8022A43150008028FE /* Common.framework in Frameworks */,
+				C8ABCBE4231E7D2100248112 /* ios_app_framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C840A50922A4228600465BA0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C8D7BF7F22A43150008028FE /* Common.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		C8A822AC20BAF801004C070F = {
 			isa = PBXGroup;
 			children = (
-				C840A50922A4228600465BA0 /* Frameworks */,
+				C8ABCBDE231E7D2100248112 /* ios_app_framework */,
 				C8A822B720BAF801004C070F /* locolaser-kotlin-multiplatform-example */,
 				C8A822B620BAF801004C070F /* Products */,
 			);
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C8A822B520BAF801004C070F /* locolaser-kotlin-multiplatform-example.app */,
+				C8ABCBDD231E7D2100248112 /* ios_app_framework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +104,15 @@
 			path = "locolaser-kotlin-multiplatform-example";
 			sourceTree = "<group>";
 		};
+		C8ABCBDE231E7D2100248112 /* ios_app_framework */ = {
+			isa = PBXGroup;
+			children = (
+				C8ABCBDF231E7D2100248112 /* ios_app_framework.h */,
+				C8ABCBE0231E7D2100248112 /* Info.plist */,
+			);
+			path = ios_app_framework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,8 +120,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8A822C720BAF802004C070F /* Build configuration list for PBXNativeTarget "locolaser-kotlin-multiplatform-example" */;
 			buildPhases = (
-				C8A822CB20BC995C004C070F /* Build Common Framework */,
-				C8A822CA20BC9933004C070F /* Remove Original Binary */,
 				C8A822B120BAF801004C070F /* Sources */,
 				C8A822B220BAF801004C070F /* Frameworks */,
 				C8A822B320BAF801004C070F /* Resources */,
@@ -116,11 +128,28 @@
 			buildRules = (
 			);
 			dependencies = (
+				C8ABCBE3231E7D2100248112 /* PBXTargetDependency */,
 			);
 			name = "locolaser-kotlin-multiplatform-example";
 			productName = "locolaser-kotlin-multiplatform-example";
 			productReference = C8A822B520BAF801004C070F /* locolaser-kotlin-multiplatform-example.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C8ABCBDC231E7D2100248112 /* ios_app_framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8ABCBE8231E7D2100248112 /* Build configuration list for PBXNativeTarget "ios_app_framework" */;
+			buildPhases = (
+				C8ABCBE9231E7D7700248112 /* Build Binary From Kotlin Sources */,
+				C8ABCBEA231E7D9700248112 /* CopyFramevork */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ios_app_framework;
+			productName = ios_app_framework;
+			productReference = C8ABCBDD231E7D2100248112 /* ios_app_framework.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -134,6 +163,9 @@
 				TargetAttributes = {
 					C8A822B420BAF801004C070F = {
 						CreatedOnToolsVersion = 9.3.1;
+					};
+					C8ABCBDC231E7D2100248112 = {
+						CreatedOnToolsVersion = 10.3;
 					};
 				};
 			};
@@ -151,6 +183,7 @@
 			projectRoot = "";
 			targets = (
 				C8A822B420BAF801004C070F /* locolaser-kotlin-multiplatform-example */,
+				C8ABCBDC231E7D2100248112 /* ios_app_framework */,
 			);
 		};
 /* End PBXProject section */
@@ -171,33 +204,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C8A822CA20BC9933004C070F /* Remove Original Binary */ = {
+		C8ABCBE9231E7D7700248112 /* Build Binary From Kotlin Sources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
-			name = "Remove Original Binary";
+			name = "Build Binary From Kotlin Sources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -f \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"";
+			shellScript = "PRJ_DIR=\"$SRCROOT/..\";\nTASK_TARGET=\"$(tr '[:lower:]' '[:upper:]' <<< ${KOTLIN_TARGET:0:1})${KOTLIN_TARGET:1}\"\n\n\"${PRJ_DIR}/gradlew\" -p \"${PRJ_DIR}/\" \":common:linkIos_app_framework${CONFIGURATION}FrameworkIos\" \\\n-Pkonan.configuration.build.dir=\"$CONFIGURATION_BUILD_DIR\" \\\n-Pkonan.debugging.symbols=\"$DEBUGGING_SYMBOLS\"             \\\n-Pkonan.optimizations.enable=\"$KONAN_ENABLE_OPTIMIZATIONS\"\n";
 		};
-		C8A822CB20BC995C004C070F /* Build Common Framework */ = {
+		C8ABCBEA231E7D9700248112 /* CopyFramevork */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
-			name = "Build Common Framework";
+			name = CopyFramevork;
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/../common/build/xcode-frameworks\"\n./gradlew :common:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+			shellScript = "BUILD_TYPE=\"$(tr '[:upper:]' '[:lower:]' <<< ${CONFIGURATION:0:1})${CONFIGURATION:1}\"\nSOURCE_DIR=\"$SRCROOT/../common/build/bin/ios/${PRODUCT_NAME}${BUILD_TYPE}Framework/\"\n\nmkdir -p \"$CONFIGURATION_BUILD_DIR\"\ncp -r \"${SOURCE_DIR}/.\" \"$CONFIGURATION_BUILD_DIR\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -212,6 +253,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C8ABCBE3231E7D2100248112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8ABCBDC231E7D2100248112 /* ios_app_framework */;
+			targetProxy = C8ABCBE2231E7D2100248112 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C80A5FD52209D732007710B2 /* Localizable.stringsdict */ = {
@@ -369,7 +418,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QYF24V9H2B;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../common/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "locolaser-kotlin-multiplatform-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -388,7 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QYF24V9H2B;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../common/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "locolaser-kotlin-multiplatform-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -398,6 +447,71 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C8ABCBE6231E7D2100248112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QYF24V9H2B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ios_app_framework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				KOTLIN_TARGET = "";
+				"KOTLIN_TARGET[sdk=iphoneos*]" = ios_arm64;
+				"KOTLIN_TARGET[sdk=iphonesimulator*]" = ios_x64;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.pocketbyte.ios-app-framework";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C8ABCBE7231E7D2100248112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QYF24V9H2B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ios_app_framework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				KOTLIN_TARGET = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.pocketbyte.ios-app-framework";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -418,6 +532,15 @@
 			buildConfigurations = (
 				C8A822C820BAF802004C070F /* Debug */,
 				C8A822C920BAF802004C070F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8ABCBE8231E7D2100248112 /* Build configuration list for PBXNativeTarget "ios_app_framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8ABCBE6231E7D2100248112 /* Debug */,
+				C8ABCBE7231E7D2100248112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
