@@ -33,8 +33,10 @@ apply plugin: "ru.pocketbyte.locolaser"
 Choose which type of artifact you will use and add them as **`localize`** dependency. This example uses artifact to work with Kotlin Mobile Multiplatform projects:
 ```groovy
 dependencies {
-    // 2: Add dependency for Kotlin mobile platforms
-    localize "ru.pocketbyte.locolaser:platform-kotlin-mobile:1.2.8"
+    // 2.1: Add dependency for Kotlin mobile platforms
+    localize "ru.pocketbyte.locolaser:platform-kotlin-mpp:1.3.0"
+    // 2.2: Add dependency for JSON platform (for JS i18next)
+    localize "ru.pocketbyte.locolaser:platform-json:1.3.0"
     
     ...
 }
@@ -61,6 +63,28 @@ In Android application it's better to implement [standard singleton](https://git
 Repository.initInstance(AndroidStringRepository(this))
 ```
 In iOS application it's better to initialize property right in [property declaration](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/common/src/iosMain/kotlin/ru/pocketbyte/locolaser/example/repository/Repository.kt)
+
+JS implementation require `i18next` object as parameter So at first first add dependency with externals into common **`build.gradle`**:
+```groovy
+kotlin {
+    sourceSets {
+        jsMain {
+            // 5.2 Add i18next dependency
+            dependencies {
+                api "ru.pocketbyte.locolaser:i18next-externals:1.0"
+            }
+        }
+    }
+}
+```
+Then you should initialize it before use:
+```kotlin
+i18next.init(localizationConfig) { _, _ ->
+    // 5.3 Init JS Repository
+    Repository.init(JsStringRepository(i18next))
+    ...
+}
+```
 
 ##### Usage in code
 Now any string can be received using code as following:
@@ -121,8 +145,15 @@ kotlin {
             ...
         }
 
+        jsMain {
+            // 7.3 Add source dir for generated js classes
+            kotlin.srcDir('./build/generated/locolaser/js/')
+
+            ...
+        }
+
         iosMain {
-            // 7.3 Add source dir for generated iOS classes
+            // 7.4 Add source dir for generated iOS classes
             kotlin.srcDir('./build/generated/locolaser/ios/')
             
             ...
@@ -134,7 +165,7 @@ kotlin {
 
 ## License
 ```
-Copyright © 2017 Denis Shurygin. All rights reserved.
+Copyright © 2019 Denis Shurygin. All rights reserved.
 Contacts: <mail@pocketbyte.ru>
 
 Licensed under the Apache License, Version 2.0 (the "License");
