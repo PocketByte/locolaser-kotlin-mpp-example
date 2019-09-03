@@ -23,10 +23,11 @@ fun initPresentation() {
 private val remoteConfig = js("""{
                 fallbackLng: 'en',
                 debug: true,
-                ns: ['common'],
-                defaultNS: 'common',
+                ns: ['strings'],
+                defaultNS: 'strings',
+                simplifyPluralSuffix: false,
                 backend: {
-                    loadPath: "https://raw.githubusercontent.com/i18next/i18next-gitbook/master/locales/{{lng}}/{{ns}}.json",
+                    loadPath: "https://raw.githubusercontent.com/PocketByte/locolaser-kotlin-mpp-example/develop/app_js/src/main/resources/locales/{{lng}}/{{ns}}.json",
                     crossDomain: true
                 }
             }""")
@@ -50,5 +51,5 @@ private val localConfig = js("""{
 private fun initI18n(callback: (err: Any?, t: Any?) -> Unit) {
     i18next.use(i18nextXHRBackend)
             .use(i18nextBrowserLanguageDetector)
-            .init(localConfig, callback)
+            .init(remoteConfig, callback)
 }
