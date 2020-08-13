@@ -1,1 +1,1 @@
-{"app_name":"locolaser-kotlin-multiplatform-example","screen_main_plural_string_plural_0":"Plural: one apple","screen_main_plural_string_plural_1":"Plural: {{count}} apples","screen_main_hello_text":"Hello Kotlin!"}
+{"app_name": "locolaser-kotlin-multiplatform-example","screen_main_hello_text": "Hello Kotlin!","screen_main_plural_string_plural_0": "Plural: one apple","screen_main_plural_string_plural_1": "Plural: {{count}} apples","screen_main_formatted_text": "The price for {{product}} is {{price}}"}

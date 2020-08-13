@@ -25,4 +25,8 @@ public class MainActivity : AppCompatActivity(), MainScreenContract.View {
     override fun showMessage2(message: String) {
         text2.text = message
     }
+
+    override fun showMessage3(message: String) {
+        text3.text = message
+    }
 }

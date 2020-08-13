@@ -33,10 +33,8 @@ apply plugin: "ru.pocketbyte.locolaser"
 Choose which type of artifact you will use and add them as **`localize`** dependency. This example uses artifact to work with Kotlin Mobile Multiplatform projects:
 ```groovy
 dependencies {
-    // 2.1: Add dependency for Kotlin mobile platforms
-    localize "ru.pocketbyte.locolaser:platform-kotlin-mpp:1.3.0"
-    // 2.2: Add dependency for JSON platform (for JS i18next)
-    localize "ru.pocketbyte.locolaser:platform-json:1.3.0"
+    // 2: Add dependency for Kotlin Multiplatform
+    localize "ru.pocketbyte.locolaser:platform-kotlin-mpp:1.5.0"
     
     ...
 }
@@ -92,68 +90,35 @@ Now any string can be received using code as following:
 Repository.str.screen_main_hello_text
 ```
 
-##### 6 Step: Plurals
-Current version of Kotlin/Native doesn't support variadic Objective-C methods (see issue https://github.com/JetBrains/kotlin-native/issues/1834). But this feature needs to implement plurals in iOS and macOS. If you want to use plurals, you should implement some workaround to make it work on iOS and macOS.
-
-At first add [LocalizedPlural.def](https://github.com/PocketByte/locolaser-kotlin-mpp-example/blob/master/common/src/iosMain/c_interop/LocalizedPlural.def) into `[common module]/src/iosMain/c_interop/`.
-
-Then add `interop` into **`build.gradle`**:
-```groovy
-kotlin {
-    targets {
-        ...
-    
-        fromPreset(iOSTarget, 'ios') {
-            // 6.2 Add interop to Objective-C code that implements work work with plurals
-            compilations.main.cinterops{
-                LocalizedPlural {
-                    defFile project.file("src/iosMain/c_interop/LocalizedPlural.def")
-                }
-            }
-            
-            ...
-        }
-        ...
-    }
-}
-```
-Thats all. Now you able to use plurals on iOS/macOS.
-Any plural string can be received using code as following:
-```kotlin
-val count = 10
-Repository.str.screen_main_plural_string(count)
-```
-
-
-##### 7 Step: Move generated files into build folder
+##### 6 Step: Move generated files into build folder
 Because String Repository classes generated depends on string resources, no need to hold them together with other source classes and commit into git. This example overrides `res_dir` of kotlin classes and put them into folders `./build/generated/locolaser/[platform]`. To tell gradle plugin about this files, add source dirs into **`gradle.build`** of common module:
 ```groovy
 
 kotlin {
     sourceSets {
         commonMain {
-            // 7.1 Add source dir for generated common classes
+            // 6.1 Add source dir for generated common classes
             kotlin.srcDir('./build/generated/locolaser/common/')
             
             ...
         }
 
         androidMain {
-            // 7.2 Add source dir for generated android classes
+            // 6.2 Add source dir for generated android classes
             kotlin.srcDir('./build/generated/locolaser/android/')
             
             ...
         }
 
         jsMain {
-            // 7.3 Add source dir for generated js classes
+            // 6.3 Add source dir for generated js classes
             kotlin.srcDir('./build/generated/locolaser/js/')
 
             ...
         }
 
         iosMain {
-            // 7.4 Add source dir for generated iOS classes
+            // 6.4 Add source dir for generated iOS classes
             kotlin.srcDir('./build/generated/locolaser/ios/')
             
             ...

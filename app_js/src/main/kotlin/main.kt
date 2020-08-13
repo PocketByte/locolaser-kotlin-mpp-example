@@ -27,24 +27,8 @@ private val remoteConfig = js("""{
                 defaultNS: 'strings',
                 simplifyPluralSuffix: false,
                 backend: {
-                    loadPath: "https://raw.githubusercontent.com/PocketByte/locolaser-kotlin-mpp-example/develop/app_js/src/main/resources/locales/{{lng}}/{{ns}}.json",
+                    loadPath: "./locales/{{lng}}/{{ns}}.json",
                     crossDomain: true
-                }
-            }""")
-
-private val localConfig = js("""{
-                fallbackLng: 'base',
-                debug: true,
-                simplifyPluralSuffix: false,
-                resources: {
-                    en: {
-                        translation: {
-                            "app_name":"locolaser-kotlin-multiplatform-example",
-                            "screen_main_plural_string_plural_0":"Plural: one apple",
-                            "screen_main_plural_string_plural_1":"Plural: %d apples",
-                            "screen_main_hello_text":"Hello Kotlin!"
-                        }
-                    }
                 }
             }""")
 

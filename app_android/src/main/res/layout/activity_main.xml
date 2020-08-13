@@ -14,9 +14,16 @@
         android:layout_gravity="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
-
     <TextView
         android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+
+    <TextView
+        android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

@@ -11,4 +11,5 @@
         <item quantity="one">Plural: one apple</item>
         <item quantity="other">Plural: %d apples</item>
     </plurals>
+    <string name="screen_main_formatted_text">The price for %s is %.2f</string>
 </resources>

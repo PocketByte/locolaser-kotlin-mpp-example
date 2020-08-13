@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,15 +28,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ox-ez-8aQ">
+                                <rect key="frame" x="16" y="373" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="unh-Sa-qiY" firstAttribute="top" secondItem="VqI-gM-73w" secondAttribute="bottom" constant="16" id="0Yt-gr-ZIp"/>
                             <constraint firstItem="unh-Sa-qiY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="376-Q6-cNq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VqI-gM-73w" secondAttribute="trailing" constant="16" id="GNi-9Y-pKs"/>
+                            <constraint firstItem="1Ox-ez-8aQ" firstAttribute="top" secondItem="unh-Sa-qiY" secondAttribute="bottom" constant="16" id="LiS-tX-Hbo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Ox-ez-8aQ" secondAttribute="trailing" constant="16" id="RpJ-u2-j8N"/>
                             <constraint firstItem="unh-Sa-qiY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T5j-JO-yyg"/>
                             <constraint firstItem="VqI-gM-73w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-24" id="TE4-Gc-461"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="unh-Sa-qiY" secondAttribute="trailing" constant="16" id="ZaY-6P-Xfp"/>
+                            <constraint firstItem="1Ox-ez-8aQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oG3-ab-4ci"/>
                             <constraint firstItem="VqI-gM-73w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="skI-me-8UT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -46,6 +53,7 @@
                     <connections>
                         <outlet property="labelMessage1" destination="VqI-gM-73w" id="IMU-e0-mB2"/>
                         <outlet property="labelMessage2" destination="unh-Sa-qiY" id="2Na-V8-F2K"/>
+                        <outlet property="labelMessage3" destination="1Ox-ez-8aQ" id="O97-IH-n9r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

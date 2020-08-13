@@ -21,6 +21,10 @@
             "res_dir": "./build/generated/locolaser/android/"
         },
         {
+            "type": "kotlin-abs-key-value",
+            "res_dir": "./build/generated/locolaser/android2/"
+        },
+        {
             "type": "kotlin-ios",
             "res_dir": "./build/generated/locolaser/ios/"
         },

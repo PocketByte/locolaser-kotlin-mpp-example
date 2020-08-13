@@ -8,6 +8,7 @@ class MainScreenView(document: Document): MainScreenContract.View {
     private val textTitle = document.getElementById("text_title")
     private val text1 = document.getElementById("text_1")
     private val text2 = document.getElementById("text_2")
+    private val text3 = document.getElementById("text_3")
 
     init {
         textTitle?.appendText(Repository.str.app_name)
@@ -21,5 +22,10 @@ class MainScreenView(document: Document): MainScreenContract.View {
     override fun showMessage2(message: String) {
         text2?.clear()
         text2?.appendText(message)
+    }
+
+    override fun showMessage3(message: String) {
+        text3?.clear()
+        text3?.appendText(message)
     }
 }

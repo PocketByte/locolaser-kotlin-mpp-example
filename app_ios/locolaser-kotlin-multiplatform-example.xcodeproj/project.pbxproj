@@ -50,7 +50,6 @@
 		C8A822BF20BAF802004C070F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8A822C220BAF802004C070F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8A822C420BAF802004C070F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8A822CD20BC9AC1004C070F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = SOURCE_ROOT; };
 		C8A822CF20BC9B76004C070F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8A822D120BCA023004C070F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8ABCBDD231E7D2100248112 /* ios_app_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ios_app_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +98,6 @@
 				C80A5FD52209D732007710B2 /* Localizable.stringsdict */,
 				C8A822C120BAF802004C070F /* LaunchScreen.storyboard */,
 				C8A822C420BAF802004C070F /* Info.plist */,
-				C8A822CD20BC9AC1004C070F /* src */,
 			);
 			path = "locolaser-kotlin-multiplatform-example";
 			sourceTree = "<group>";
@@ -163,6 +161,7 @@
 				TargetAttributes = {
 					C8A822B420BAF801004C070F = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1150;
 					};
 					C8ABCBDC231E7D2100248112 = {
 						CreatedOnToolsVersion = 10.3;
@@ -416,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QYF24V9H2B;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -426,6 +426,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pocketbyte.locolaser-kotlin-multiplatform-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -435,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QYF24V9H2B;
 				FRAMEWORK_SEARCH_PATHS = "";

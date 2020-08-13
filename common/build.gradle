@@ -27,10 +27,8 @@ android {
 }
 
 dependencies {
-    // 2.1: Add dependency for Kotlin mobile platforms
+    // 2: Add dependency for Kotlin Multiplatform
     localize "ru.pocketbyte.locolaser:platform-kotlin-mpp:$locolaser_version"
-    // 2.2: Add dependency for JSON platform (for JS i18next)
-    localize "ru.pocketbyte.locolaser:platform-json:$locolaser_version"
 }
 
 kotlin {
@@ -51,13 +49,6 @@ kotlin {
                               ? presets.iosArm64 : presets.iosX64
 
         fromPreset(iOSTarget, 'ios') {
-            // 6.2 Add interop to Objective-C code that implements work work with plurals
-            compilations.main.cinterops{
-                LocalizedPlural {
-                    defFile project.file("src/iosMain/c_interop/LocalizedPlural.def")
-                }
-            }
-
             binaries {
                 framework('ios_app_framework')
             }
@@ -66,7 +57,7 @@ kotlin {
 
     sourceSets {
         commonMain {
-            // 7.1 Add source dir for generated common classes
+            // 6.1 Add source dir for generated common classes
             kotlin.srcDir('./build/generated/locolaser/common/')
             dependencies {
                 api 'org.jetbrains.kotlin:kotlin-stdlib-common'
@@ -75,7 +66,7 @@ kotlin {
         }
 
         androidMain {
-            // 7.2 Add source dir for generated android classes
+            // 6.2 Add source dir for generated android classes
             kotlin.srcDir('./build/generated/locolaser/android/')
             dependencies {
                 api 'org.jetbrains.kotlin:kotlin-stdlib'
@@ -84,7 +75,7 @@ kotlin {
         }
 
         jsMain {
-            // 7.3 Add source dir for generated js classes
+            // 6.3 Add source dir for generated js classes
             kotlin.srcDir('./build/generated/locolaser/js/')
             dependencies {
                 api 'org.jetbrains.kotlin:kotlin-stdlib'
@@ -95,13 +86,13 @@ kotlin {
         }
 
         iosMain {
-            // 7.3 Add source dir for generated iOS classes
+            // 6.4 Add source dir for generated iOS classes
             kotlin.srcDir('./build/generated/locolaser/ios/')
         }
     }
 }
 
 // 4 Run task ‘localize’ before each build
-//preBuild.dependsOn {
-//    project.tasks.getByPath(':common:localize')
-//}
+preBuild.dependsOn {
+    project.tasks.getByPath(':common:localize')
+}

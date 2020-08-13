@@ -8,6 +8,7 @@ public class MainScreenPresenter(
 
     override fun start() {
         this.view.showMessage1(Repository.str.screen_main_hello_text)
-        this.view.showMessage2(Repository.str.screen_main_plural_string(1))
+        this.view.showMessage2(Repository.str.screen_main_plural_string(10))
+        this.view.showMessage3(Repository.str.screen_main_formatted_text("Apple", 3.5))
     }
 }

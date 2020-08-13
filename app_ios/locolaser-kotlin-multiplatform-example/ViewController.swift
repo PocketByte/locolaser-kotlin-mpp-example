@@ -13,6 +13,7 @@ class ViewController: UIViewController, MainScreenContractView {
     
     @IBOutlet weak var labelMessage1: UILabel!
     @IBOutlet weak var labelMessage2: UILabel!
+    @IBOutlet weak var labelMessage3: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +27,9 @@ class ViewController: UIViewController, MainScreenContractView {
     
     func showMessage2(message: String) {
         labelMessage2.text = message
+    }
+    
+    func showMessage3(message: String) {
+        labelMessage3.text = message
     }
 }
