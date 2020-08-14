@@ -33,8 +33,11 @@ apply plugin: "ru.pocketbyte.locolaser"
 Choose which type of artifact you will use and add them as **`localize`** dependency. This example uses artifact to work with Kotlin Mobile Multiplatform projects:
 ```groovy
 dependencies {
-    // 2: Add dependency for Kotlin Multiplatform
+    // 2.1: Add dependency for Kotlin Multiplatform
     localize "ru.pocketbyte.locolaser:platform-kotlin-mpp:1.5.0"
+    // 2.2: Add dependency for JSON platform (for JS i18next)
+    localize "ru.pocketbyte.locolaser:platform-json:1.5.0"
+
     
     ...
 }
