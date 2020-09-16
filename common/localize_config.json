@@ -1,28 +1,12 @@
 {
     "platform": [
         {
-            "type": "android",
-            "res_dir": "../app_android/src/main/res/"
-        },
-        {
-            "type": "ios",
-            "res_dir": "../app_ios/locolaser-kotlin-multiplatform-example/"
-        },
-        {
-            "type": "json",
-            "res_dir": "../app_js/src/main/resources/locales/"
-        },
-        {
             "type": "kotlin-common",
             "res_dir": "./build/generated/locolaser/common/"
         },
         {
             "type": "kotlin-android",
             "res_dir": "./build/generated/locolaser/android/"
-        },
-        {
-            "type": "kotlin-abs-key-value",
-            "res_dir": "./build/generated/locolaser/android2/"
         },
         {
             "type": "kotlin-ios",
@@ -33,7 +17,21 @@
             "res_dir": "./build/generated/locolaser/js/"
         }
     ],
-    "source": "null",
+    "source": [
+        {
+            "type": "android",
+            "res_dir": "../app_android/src/main/res/"
+        },
+        {
+            "type": "ios",
+            "res_dir": "../app_ios/locolaser-kotlin-multiplatform-example/"
+        },
+        {
+            "type": "json",
+            "res_dir": "../app_js/src/main/resources/locales/"
+        }
+    ],
+    "locales": ["base"],
     "temp_dir": "./build/temp/",
     "duplicate_comment":false
 }

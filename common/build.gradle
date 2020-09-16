@@ -28,9 +28,9 @@ android {
 
 dependencies {
     // 2.1: Add dependency for Kotlin Multiplatform
-    localize "ru.pocketbyte.locolaser:platform-kotlin-mpp:$locolaser_version"
+    localize "ru.pocketbyte.locolaser:resource-kotlin-mpp:$locolaser_version"
     // 2.2: Add dependency for JSON platform (for JS i18next)
-    localize "ru.pocketbyte.locolaser:platform-json:$locolaser_version"
+    localize "ru.pocketbyte.locolaser:resource-json:$locolaser_version"
 
 }
 
