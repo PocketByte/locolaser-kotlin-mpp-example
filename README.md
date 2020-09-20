@@ -34,9 +34,9 @@ Choose which type of artifact you will use and add them as **`localize`** depend
 ```groovy
 dependencies {
     // 2.1: Add dependency for Kotlin Multiplatform
-    localize "ru.pocketbyte.locolaser:platform-kotlin-mpp:1.5.0"
+    localize "ru.pocketbyte.locolaser:platform-kotlin-mpp:2.0.0"
     // 2.2: Add dependency for JSON platform (for JS i18next)
-    localize "ru.pocketbyte.locolaser:platform-json:1.5.0"
+    localize "ru.pocketbyte.locolaser:platform-json:2.0.0"
 
     
     ...
