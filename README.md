@@ -2,49 +2,47 @@
 [LocoLaser](https://github.com/PocketByte/LocoLaser/) - Localization tool that generate localization files for various platforms depends on common source.
 <br>This example shows how to use LocoLaser in Kotlin Mobile Multiplatform projects to generate localized strings repository class with common interface for both mobile platforms: Android and iOS.
 
-##### 1 Step: Apply gradle plugin
-Example uses standard way to apply custom gradle plugin.<br>
-In **`build.gradle`** of the project was added maven repository and classpath:
+##### 1 Step: Add artifacts dependency
+Choose which type of artifact you will use and add them as **`classpath`** dependency. 
+This example uses artifact to work with Kotlin Mobile Multiplatform projects:
 ```groovy
 buildscript {
-  repositories {
-    maven {
-      // 1.1: Add maven repository
-      url "https://plugins.gradle.org/m2/"
+    repositories {
+        // 1.1: Add maven repositories
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+        ...
     }
-    
-    ...
-  }
-  dependencies {
-    // 1.2: Add classpath dependency
-    classpath "gradle.plugin.ru.pocketbyte.locolaser:plugin:1.0.4"
-    
-    ...
-  }
+    dependencies {
+        // 1.2: Add plugin classpath dependency
+        classpath "gradle.plugin.ru.pocketbyte.locolaser:plugin:2.2.5"
+        
+        // 1.3: Add dependency for Kotlin Multiplatform
+        classpath "ru.pocketbyte.locolaser:platform-kotlin-mpp:2.2.5"
+        // 1.4: Add dependency for JSON platform (for JS i18next)
+        classpath "ru.pocketbyte.locolaser:platform-json:2.2.5"
+        
+        ...
+    }
 }
 ```
+
+##### 2 Step: Apply and configure gradle plugin
+Example uses standard way to apply custom gradle plugin.<br>
 Apply plugin in **`build.gradle`** of common module:
 ```groovy
-// 1.3: Apply LocoLaser plugin
+// 2.1: Apply LocoLaser plugin
 apply plugin: "ru.pocketbyte.locolaser"
-```
 
-##### 2 Step: Add 'localize' dependency
-Choose which type of artifact you will use and add them as **`localize`** dependency. This example uses artifact to work with Kotlin Mobile Multiplatform projects:
-```groovy
-dependencies {
-    // 2.1: Add dependency for Kotlin Multiplatform
-    localize "ru.pocketbyte.locolaser:platform-kotlin-mpp:2.0.0"
-    // 2.2: Add dependency for JSON platform (for JS i18next)
-    localize "ru.pocketbyte.locolaser:platform-json:2.0.0"
-
-    
-    ...
+// 2.2: Configure localization config
+localize {
+    configFromFile("${project.projectDir}/localize_config.json")
 }
 ```
 
 ##### 3 Step: Create configuration file
-How to build config file you can find in Wiki: [Platform: Kotlin Mobile Multiplatform](https://github.com/PocketByte/LocoLaser/wiki/Platform:-Kotlin-Mobile-Multiplatform) By default this config file should have name`"localize_config.json"` and be placed in the root folder of the project.
+How to build config file you can find in Wiki:[Platform: Kotlin Mobile Multiplatform](https://github.com/PocketByte/LocoLaser/wiki/Platform:-Kotlin-Mobile-Multiplatform) 
+By default this config file should have name`"localize_config.json"` and be placed in the root folder of the project.
 
 ##### 4 Step: Run task 'localize' before build
 This example run **`:localize`** task before each build. To do it add task dependencies in **`build.gradle`** of common module:

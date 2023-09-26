@@ -3,8 +3,7 @@
 buildscript {
     ext.kotlin_version = '1.4.0'
 
-    ext.locolaser_version = '2.0.0'
-    ext.locolaser_plugin_version = '1.0.4'
+    ext.locolaser_version = '2.2.5'
 
     ext.android_sdk_compile = 28
     ext.android_sdk_target = 28
@@ -13,19 +12,24 @@ buildscript {
     ext.android_support_version = '28.0.0'
 
     repositories {
-        maven { url "https://maven.google.com" }
+        mavenLocal()
         google()
-        mavenCentral()
 
-        // 1.1: Add maven repository
+        // 1.1: Add maven repositoriees
         maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
-        // 1.2: Add classpath dependency
-        classpath "gradle.plugin.ru.pocketbyte.locolaser:plugin:$locolaser_plugin_version"
+        // 1.2: Add plugin classpath dependency
+        classpath "ru.pocketbyte.locolaser:plugin:$locolaser_version"
+
+        // 1.3: Add dependency for Kotlin Multiplatform
+        classpath "ru.pocketbyte.locolaser:resource-kotlin-mpp:$locolaser_version"
+        // 1.4: Add dependency for JSON platform (for JS i18next)
+        classpath "ru.pocketbyte.locolaser:resource-json:$locolaser_version"
     }
 }
 
