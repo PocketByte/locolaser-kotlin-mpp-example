@@ -1,3 +1,0 @@
-include ':app_android'
-include ':app_js'
-include ':common'

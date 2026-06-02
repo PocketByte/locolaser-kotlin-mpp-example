@@ -1,19 +1,27 @@
 package ru.pocketbyte.locolaser.example.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import ru.pocketbyte.locolaser.example.R
 import ru.pocketbyte.locolaser.example.presentation.MainScreenContract
 import ru.pocketbyte.locolaser.example.presentation.MainScreenPresenter
 
-public class MainActivity : AppCompatActivity(), MainScreenContract.View {
+class MainActivity : AppCompatActivity(), MainScreenContract.View {
 
     private var presenter: MainScreenContract.Presenter = MainScreenPresenter(this)
 
-    protected override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var text1: TextView
+    private lateinit var text2: TextView
+    private lateinit var text3: TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        text1 = findViewById(R.id.text1)
+        text2 = findViewById(R.id.text2)
+        text3 = findViewById(R.id.text3)
 
         this.presenter.start()
     }

@@ -1,5 +1,5 @@
 import org.w3c.dom.Document
-import kotlin.dom.*
+import kotlinx.dom.*
 import ru.pocketbyte.locolaser.example.presentation.MainScreenContract
 import ru.pocketbyte.locolaser.example.repository.Repository
 
@@ -10,8 +10,9 @@ class MainScreenView(document: Document): MainScreenContract.View {
     private val text2 = document.getElementById("text_2")
     private val text3 = document.getElementById("text_3")
 
-    init {
-        textTitle?.appendText(Repository.str.app_name)
+    fun showTitle(title: String) {
+        textTitle?.clear()
+        textTitle?.appendText(title)
     }
 
     override fun showMessage1(message: String) {

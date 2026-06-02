@@ -1,4 +1,4 @@
-import kotlin.browser.*
+import kotlinx.browser.*
 import i18next.*
 import ru.pocketbyte.locolaser.example.presentation.MainScreenContract
 import ru.pocketbyte.locolaser.example.presentation.MainScreenPresenter
@@ -7,7 +7,6 @@ import ru.pocketbyte.locolaser.example.repository.Repository
 
 fun main() {
     initI18n { _, _ ->
-        // 5.3 Init JS Repository
         Repository.init(JsStringRepository(i18next))
         initPresentation()
     }
@@ -16,7 +15,9 @@ fun main() {
 lateinit var presenter: MainScreenContract.Presenter
 
 fun initPresentation() {
-    presenter = MainScreenPresenter(MainScreenView(document))
+    val view = MainScreenView(document)
+    view.showTitle(Repository.str.app_name)
+    presenter = MainScreenPresenter(view)
     presenter.start()
 }
 

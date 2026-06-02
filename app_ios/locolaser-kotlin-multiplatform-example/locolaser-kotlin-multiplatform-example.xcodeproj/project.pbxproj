@@ -3,32 +3,52 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C89A9D0520BDF9F500A19C77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C89A9D0320BDF9F500A19C77 /* Localizable.strings */; };
-		C8A822BE20BAF801004C070F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A822BC20BAF801004C070F /* Main.storyboard */; };
-		C8A822C020BAF802004C070F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A822BF20BAF802004C070F /* Assets.xcassets */; };
-		C8A822C320BAF802004C070F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A822C120BAF802004C070F /* LaunchScreen.storyboard */; };
-		C8A822D020BC9B76004C070F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A822CF20BC9B76004C070F /* ViewController.swift */; };
-		C8A822D220BCA023004C070F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A822D120BCA023004C070F /* AppDelegate.swift */; };
+		AA000070000000000000000A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001000000000000000A /* AppDelegate.swift */; };
+		AA000071000000000000000A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002000000000000000A /* ViewController.swift */; };
+		AA000072000000000000000A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA000003000000000000000A /* Main.storyboard */; };
+		AA000073000000000000000A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA000004000000000000000A /* LaunchScreen.storyboard */; };
+		AA000074000000000000000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA000005000000000000000A /* Assets.xcassets */; };
+		AA000075000000000000000A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA000008000000000000000A /* Localizable.strings */; };
+		AA000076000000000000000A /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = AA000009000000000000000A /* Localizable.stringsdict */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C89A9D0420BDF9F500A19C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C8A822B520BAF801004C070F /* locolaser-kotlin-multiplatform-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "locolaser-kotlin-multiplatform-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8A822BD20BAF801004C070F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C8A822BF20BAF802004C070F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C8A822C220BAF802004C070F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C8A822C420BAF802004C070F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8A822CD20BC9AC1004C070F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = SOURCE_ROOT; };
-		C8A822CF20BC9B76004C070F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C8A822D120BCA023004C070F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA000001000000000000000A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA000002000000000000000A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA000003000000000000000A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AA000004000000000000000A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA000005000000000000000A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA000006000000000000000A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA000007000000000000000A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = "Base.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		AA00000A000000000000000A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = Base; path = "Base.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
+		AA000031000000000000000A /* locolaser-kotlin-multiplatform-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "locolaser-kotlin-multiplatform-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXVariantGroup section */
+		AA000008000000000000000A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA000007000000000000000A /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		AA000009000000000000000A /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA00000A000000000000000A /* Base */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		C8A822B220BAF801004C070F /* Frameworks */ = {
+		AA000012000000000000000A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,33 +58,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C8A822AC20BAF801004C070F = {
+		AA000020000000000000000A = {
 			isa = PBXGroup;
 			children = (
-				C8A822B720BAF801004C070F /* locolaser-kotlin-multiplatform-example */,
-				C8A822B620BAF801004C070F /* Products */,
+				AA000022000000000000000A /* locolaser-kotlin-multiplatform-example */,
+				AA000021000000000000000A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C8A822B620BAF801004C070F /* Products */ = {
+		AA000021000000000000000A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8A822B520BAF801004C070F /* locolaser-kotlin-multiplatform-example.app */,
+				AA000031000000000000000A /* locolaser-kotlin-multiplatform-example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C8A822B720BAF801004C070F /* locolaser-kotlin-multiplatform-example */ = {
+		AA000022000000000000000A /* locolaser-kotlin-multiplatform-example */ = {
 			isa = PBXGroup;
 			children = (
-				C8A822D120BCA023004C070F /* AppDelegate.swift */,
-				C8A822CF20BC9B76004C070F /* ViewController.swift */,
-				C8A822BC20BAF801004C070F /* Main.storyboard */,
-				C8A822BF20BAF802004C070F /* Assets.xcassets */,
-				C89A9D0320BDF9F500A19C77 /* Localizable.strings */,
-				C8A822C120BAF802004C070F /* LaunchScreen.storyboard */,
-				C8A822C420BAF802004C070F /* Info.plist */,
-				C8A822CD20BC9AC1004C070F /* src */,
+				AA000001000000000000000A /* AppDelegate.swift */,
+				AA000002000000000000000A /* ViewController.swift */,
+				AA000003000000000000000A /* Main.storyboard */,
+				AA000004000000000000000A /* LaunchScreen.storyboard */,
+				AA000005000000000000000A /* Assets.xcassets */,
+				AA000008000000000000000A /* Localizable.strings */,
+				AA000009000000000000000A /* Localizable.stringsdict */,
+				AA000006000000000000000A /* Info.plist */,
 			);
 			path = "locolaser-kotlin-multiplatform-example";
 			sourceTree = "<group>";
@@ -72,16 +92,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C8A822B420BAF801004C070F /* locolaser-kotlin-multiplatform-example */ = {
+		AA000030000000000000000A /* locolaser-kotlin-multiplatform-example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8A822C720BAF802004C070F /* Build configuration list for PBXNativeTarget "locolaser-kotlin-multiplatform-example" */;
+			buildConfigurationList = AA000061000000000000000A /* Build configuration list for PBXNativeTarget "locolaser-kotlin-multiplatform-example" */;
 			buildPhases = (
-				C8A822CA20BC9933004C070F /* Remove Original Binary */,
-				C8A822B120BAF801004C070F /* Sources */,
-				C8A822B220BAF801004C070F /* Frameworks */,
-				C8A822CB20BC995C004C070F /* Build Binary From Kotlin Sources */,
-				C8A822CC20BC99C8004C070F /* Replace Binary */,
-				C8A822B320BAF801004C070F /* Resources */,
+				AA000010000000000000000A /* Build KMP Framework */,
+				AA000011000000000000000A /* Sources */,
+				AA000012000000000000000A /* Frameworks */,
+				AA000013000000000000000A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -89,149 +107,94 @@
 			);
 			name = "locolaser-kotlin-multiplatform-example";
 			productName = "locolaser-kotlin-multiplatform-example";
-			productReference = C8A822B520BAF801004C070F /* locolaser-kotlin-multiplatform-example.app */;
+			productReference = AA000031000000000000000A /* locolaser-kotlin-multiplatform-example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C8A822AD20BAF801004C070F /* Project object */ = {
+		AA000040000000000000000A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = PcketByte.ru;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					C8A822B420BAF801004C070F = {
-						CreatedOnToolsVersion = 9.3.1;
+					AA000030000000000000000A = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = C8A822B020BAF801004C070F /* Build configuration list for PBXProject "locolaser-kotlin-multiplatform-example" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = AA000060000000000000000A /* Build configuration list for PBXProject "locolaser-kotlin-multiplatform-example" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = C8A822AC20BAF801004C070F;
-			productRefGroup = C8A822B620BAF801004C070F /* Products */;
+			mainGroup = AA000020000000000000000A;
+			productRefGroup = AA000021000000000000000A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C8A822B420BAF801004C070F /* locolaser-kotlin-multiplatform-example */,
+				AA000030000000000000000A /* locolaser-kotlin-multiplatform-example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C8A822B320BAF801004C070F /* Resources */ = {
+		AA000013000000000000000A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C89A9D0520BDF9F500A19C77 /* Localizable.strings in Resources */,
-				C8A822C320BAF802004C070F /* LaunchScreen.storyboard in Resources */,
-				C8A822C020BAF802004C070F /* Assets.xcassets in Resources */,
-				C8A822BE20BAF801004C070F /* Main.storyboard in Resources */,
+				AA000072000000000000000A /* Main.storyboard in Resources */,
+				AA000073000000000000000A /* LaunchScreen.storyboard in Resources */,
+				AA000074000000000000000A /* Assets.xcassets in Resources */,
+				AA000075000000000000000A /* Localizable.strings in Resources */,
+				AA000076000000000000000A /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C8A822CA20BC9933004C070F /* Remove Original Binary */ = {
+		AA000010000000000000000A /* Build KMP Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Remove Original Binary";
+			name = "Build KMP Framework";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -f \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"";
-		};
-		C8A822CB20BC995C004C070F /* Build Binary From Kotlin Sources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Build Binary From Kotlin Sources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT\" \"$KONAN_TASK\"          \\\n-Pkonan.configuration.build.dir=\"$CONFIGURATION_BUILD_DIR\" \\\n-Pkonan.debugging.symbols=\"$DEBUGGING_SYMBOLS\"             \\\n-Pkonan.optimizations.enable=\"$KONAN_ENABLE_OPTIMIZATIONS\"";
-		};
-		C8A822CC20BC99C8004C070F /* Replace Binary */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Replace Binary";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp \"$TARGET_BUILD_DIR/app.kexe\" \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"";
+			shellScript = "#!/bin/sh\nset -e\n\ncd \"$SRCROOT/../../\"\n\n# Map Xcode SDK + arch to KMP target\nif [ \"$PLATFORM_NAME\" = \"iphonesimulator\" ]; then\n    if [ \"$ARCHS\" = \"arm64\" ]; then\n        KOTLIN_TARGET_GRADLE=\"IosSimulatorArm64\"\n        KOTLIN_TARGET_DIR=\"iosSimulatorArm64\"\n    else\n        KOTLIN_TARGET_GRADLE=\"IosX64\"\n        KOTLIN_TARGET_DIR=\"iosX64\"\n    fi\nelse\n    KOTLIN_TARGET_GRADLE=\"IosArm64\"\n    KOTLIN_TARGET_DIR=\"iosArm64\"\nfi\n\n# Build the KMP framework\n./gradlew \":common:linkIos_app_framework${CONFIGURATION}Framework${KOTLIN_TARGET_GRADLE}\"\n\n# Embed the framework into the app bundle\nFRAMEWORK_NAME=\"ios_app_framework\"\nFRAMEWORK_BUILD_DIR=\"./common/build/bin/${KOTLIN_TARGET_DIR}/${FRAMEWORK_NAME}${CONFIGURATION}Framework\"\nEMBED_DIR=\"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH\"\nEMBED_PATH=\"$EMBED_DIR/${FRAMEWORK_NAME}.framework\"\n\nmkdir -p \"$EMBED_DIR\"\nrm -rf \"$EMBED_PATH\"\ncp -R \"$FRAMEWORK_BUILD_DIR/${FRAMEWORK_NAME}.framework\" \"$EMBED_PATH\"\n\n# Sign if identity is set\nif [ -n \"$EXPANDED_CODE_SIGN_IDENTITY\" ] && [ \"$EXPANDED_CODE_SIGN_IDENTITY\" != \"-\" ]; then\n    codesign --force --sign \"$EXPANDED_CODE_SIGN_IDENTITY\" \"$EMBED_PATH\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C8A822B120BAF801004C070F /* Sources */ = {
+		AA000011000000000000000A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A822D220BCA023004C070F /* AppDelegate.swift in Sources */,
-				C8A822D020BC9B76004C070F /* ViewController.swift in Sources */,
+				AA000070000000000000000A /* AppDelegate.swift in Sources */,
+				AA000071000000000000000A /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		C89A9D0320BDF9F500A19C77 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C89A9D0420BDF9F500A19C77 /* Base */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		C8A822BC20BAF801004C070F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8A822BD20BAF801004C070F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C8A822C120BAF802004C070F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8A822C220BAF802004C070F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		C8A822C520BAF802004C070F /* Debug */ = {
+		AA000050000000000000000A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -256,12 +219,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -275,8 +238,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -284,14 +248,13 @@
 			};
 			name = Debug;
 		};
-		C8A822C620BAF802004C070F /* Release */ = {
+		AA000051000000000000000A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -316,12 +279,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -329,8 +292,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -338,43 +302,52 @@
 			};
 			name = Release;
 		};
-		C8A822C820BAF802004C070F /* Debug */ = {
+		AA000052000000000000000A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QYF24V9H2B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)",
+				);
 				INFOPLIST_FILE = "locolaser-kotlin-multiplatform-example/Info.plist";
-				KONAN_ENABLE_OPTIMIZATIONS = NO;
-				KONAN_TASK = "";
-				"KONAN_TASK[sdk=iphonesimulator*]" = compileKonanAppIos_x64;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pocketbyte.locolaser-kotlin-multiplatform-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		C8A822C920BAF802004C070F /* Release */ = {
+		AA000053000000000000000A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QYF24V9H2B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)",
+				);
 				INFOPLIST_FILE = "locolaser-kotlin-multiplatform-example/Info.plist";
-				KONAN_ENABLE_OPTIMIZATIONS = YES;
-				KONAN_TASK = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.pocketbyte.locolaser-kotlin-multiplatform-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -382,25 +355,26 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C8A822B020BAF801004C070F /* Build configuration list for PBXProject "locolaser-kotlin-multiplatform-example" */ = {
+		AA000060000000000000000A /* Build configuration list for PBXProject "locolaser-kotlin-multiplatform-example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8A822C520BAF802004C070F /* Debug */,
-				C8A822C620BAF802004C070F /* Release */,
+				AA000050000000000000000A /* Debug */,
+				AA000051000000000000000A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8A822C720BAF802004C070F /* Build configuration list for PBXNativeTarget "locolaser-kotlin-multiplatform-example" */ = {
+		AA000061000000000000000A /* Build configuration list for PBXNativeTarget "locolaser-kotlin-multiplatform-example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8A822C820BAF802004C070F /* Debug */,
-				C8A822C920BAF802004C070F /* Release */,
+				AA000052000000000000000A /* Debug */,
+				AA000053000000000000000A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
 	};
-	rootObject = C8A822AD20BAF801004C070F /* Project object */;
+	rootObject = AA000040000000000000000A /* Project object */;
 }

@@ -7,3 +7,5 @@
 "app_name" = "locolaser-kotlin-multiplatform-example";
 
 "screen_main_hello_text" = "Hello Kotlin!";
+
+"screen_main_formatted_text" = "The price for %@ is %.2f";

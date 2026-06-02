@@ -7,31 +7,29 @@
 //
 
 import UIKit
+import ios_app_framework
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MainScreenContractView {
     
-    @IBOutlet var label: UILabel!
+    @IBOutlet weak var labelMessage1: UILabel!
+    @IBOutlet weak var labelMessage2: UILabel!
+    @IBOutlet weak var labelMessage3: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        MainScreenPresenter(view: self).start()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func showMessage1(message: String) {
+        labelMessage1.text = message
     }
-    */
-
+    
+    func showMessage2(message: String) {
+        labelMessage2.text = message
+    }
+    
+    func showMessage3(message: String) {
+        labelMessage3.text = message
+    }
 }
