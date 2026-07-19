@@ -39,7 +39,7 @@ kotlin {
         val iosX64Main by getting { dependsOn(iosMain) }
         val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
         commonMain.dependencies {
-            api("ru.pocketbyte.locolaser:runtime:2.6.0")
+            api("ru.pocketbyte.locolaser:runtime:2.7.0")
         }
     }
 }
